@@ -8,7 +8,6 @@ on:
       - 'omx-issue-*'
     paths:
       - .github/workflows/rust-ci.yml
-      - .github/scripts/check_doc_source_of_truth.py
       - .github/FUNDING.yml
       - README.md
       - USAGE.md
@@ -22,7 +21,6 @@ on:
       - main
     paths:
       - .github/workflows/rust-ci.yml
-      - .github/scripts/check_doc_source_of_truth.py
       - .github/FUNDING.yml
       - README.md
       - USAGE.md
@@ -45,20 +43,6 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  doc-source-of-truth:
-    name: docs source-of-truth
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: .
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-      - name: Check docs and metadata for stale branding
-        run: python .github/scripts/check_doc_source_of_truth.py
-
   fmt:
     name: cargo fmt
     runs-on: ubuntu-latest

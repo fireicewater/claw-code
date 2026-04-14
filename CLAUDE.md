@@ -54,10 +54,7 @@ Key dependency direction: `cli → api + tools + commands`, `tools → runtime`,
 
 ## Repository shape
 
-- `rust/` — Rust workspace and the `claw` binary (primary runtime)
-- `src/` — companion Python/reference workspace; stays consistent with Rust implementation
-- `tests/` — validation surfaces; review alongside code changes
-- `src/` and `tests/` should both be updated when behavior changes
+- `rust/` — Rust workspace and the `claw` binary (the entire runtime)
 
 ## Working agreement
 
